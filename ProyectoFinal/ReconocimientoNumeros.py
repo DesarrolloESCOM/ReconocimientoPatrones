@@ -3,7 +3,7 @@ import sys
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
-im = cv2.imread('Entrenamiento2.png')
+im = cv2.imread('./Imagenes/Entrenamiento2.png')
 #print "la lees??"
 im3 = im.copy()
 
@@ -31,12 +31,14 @@ for cnt in contours:
         if  h>23:
             cv2.rectangle(im,(x,y),(x+w,y+h),(0,0,255),2)
             roi = thresh[y:y+h,x:x+w]
+
             if contadorAuxiliar is 0:
                 objetoImagen = plt.imshow(roi)
                 plt.show()
             else:
                 objetoImagen.set_data(roi)            
             plt.pause(0.0001)
+            
             contadorAuxiliar += 1
             roismall = cv2.resize(roi,(10,10))
             
