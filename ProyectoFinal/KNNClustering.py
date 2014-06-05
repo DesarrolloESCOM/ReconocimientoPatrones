@@ -18,7 +18,7 @@ model = cv2.KNearest()
 model.train(samples,responses)
 #se cargan los argumentos
 argumentos = sys.argv
-print len(argumentos)
+#print len(argumentos)
 if len(argumentos)<=1:
     argumentos = [argumentos[0],'','']
 if len(argumentos[1])>0:
@@ -75,7 +75,7 @@ if len(argumentos[2]) > 0:
     cantidadOriginal = contadorLetras(argumentos[2])
     error = []
     for index in xrange(0,10):
-        valor = float(cantidadOriginal[index]-mapaResultado[index])/cantidadOriginal[index]
+        valor = float(cantidadOriginal[index]-mapaResultado[index])
         error.append(valor) 
 else:
     error = [0.1] * 10
